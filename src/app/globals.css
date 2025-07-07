@@ -1,0 +1,164 @@
+@import "tailwindcss";
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.7s ease;
+  }
+  .animate-fade-in-fast {
+    animation: fadeIn 0.3s ease;
+  }
+  .animate-bounce-in {
+    animation: bounceIn 0.7s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  @keyframes bounceIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.8) translateY(30px);
+    }
+    60% {
+      opacity: 1;
+      transform: scale(1.05) translateY(-8px);
+    }
+    80% {
+      transform: scale(0.98) translateY(2px);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+  @keyframes floatY {
+    0% {
+      transform: translateY(0) translateX(0);
+    }
+    50% {
+      transform: translateY(-30px) translateX(10px);
+    }
+    100% {
+      transform: translateY(0) translateX(0);
+    }
+  }
+  .animate-floatY {
+    animation: floatY 4s ease-in-out infinite;
+  }
+  @keyframes floatX {
+    0% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(20px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  .animate-floatX {
+    animation: floatX 6s ease-in-out infinite;
+  }
+  @keyframes drift-right {
+    0% {
+      transform: translateX(-10vw) translateY(0) rotate(-10deg);
+      opacity: 0;
+    }
+    5% {
+      opacity: 1;
+    }
+    95% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(110vw) translateY(20vh) rotate(10deg);
+      opacity: 0;
+    }
+  }
+  .animate-drift-right {
+    animation: drift-right 18s linear infinite;
+  }
+  @keyframes drift-left {
+    0% {
+      transform: translateX(110vw) translateY(0) rotate(10deg);
+      opacity: 0;
+    }
+    5% {
+      opacity: 1;
+    }
+    95% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(-10vw) translateY(-20vh) rotate(-10deg);
+      opacity: 0;
+    }
+  }
+  .animate-drift-left {
+    animation: drift-left 22s linear infinite;
+  }
+  @keyframes drift-down {
+    0% {
+      transform: translateY(-10vh) translateX(0) scale(1.1);
+      opacity: 0;
+    }
+    5% {
+      opacity: 1;
+    }
+    95% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(110vh) translateX(10vw) scale(0.9);
+      opacity: 0;
+    }
+  }
+  .animate-drift-down {
+    animation: drift-down 20s linear infinite;
+  }
+  @keyframes drift-up {
+    0% {
+      transform: translateY(110vh) translateX(0) scale(0.9);
+      opacity: 0;
+    }
+    5% {
+      opacity: 1;
+    }
+    95% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-10vh) translateX(-10vw) scale(1.1);
+      opacity: 0;
+    }
+  }
+  .animate-drift-up {
+    animation: drift-up 24s linear infinite;
+  }
+  /* Animation delays for variety */
+  .delay-0 {
+    animation-delay: 0s;
+  }
+  .delay-2 {
+    animation-delay: 2s;
+  }
+  .delay-4 {
+    animation-delay: 4s;
+  }
+  .delay-6 {
+    animation-delay: 6s;
+  }
+  .delay-8 {
+    animation-delay: 8s;
+  }
+}
