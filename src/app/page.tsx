@@ -113,7 +113,7 @@ export default function Home() {
   const [from, setFrom] = useState("USD");
   const [to, setTo] = useState("EUR");
   const [result, setResult] = useState<string | null>(null);
-  const [rates, setRates] = useState<Record<string, number>>({});
+  const [, setRates] = useState<Record<string, number>>({});
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [theme, setTheme] = useState<"light" | "dark">("dark");
@@ -148,7 +148,8 @@ export default function Home() {
     function animate() {
       setSymbolStates((prev) =>
         prev.map((s) => {
-          let { x, y, dx, dy, size, rotate, rotateSpeed } = s;
+          let { x, y, rotate } = s;
+          const { dx, dy, size, rotateSpeed } = s;
           x += dx;
           y += dy;
           rotate += rotateSpeed;
