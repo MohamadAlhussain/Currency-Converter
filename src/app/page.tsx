@@ -122,7 +122,7 @@ export default function Home() {
   const [symbolStates, setSymbolStates] = useState<SymbolState[]>(() =>
     SYMBOLS.map(() => getRandomSymbolState())
   );
-  const animationRef = useRef<number>();
+  const animationRef = useRef<number | null>(null);
 
   // Fetch currency rates from the backend API route on mount
   useEffect(() => {
